@@ -1,4 +1,4 @@
-# 基于SpringBoot+Mybatis-Plus+Redis的秒杀系统
+# 基于SpringBoot+Vue+Mybatis-Plus+Redis的秒杀系统
 
 *借鉴：https://www.bilibili.com/video/BV1sf4y1L7KE?spm_id_from=333.880.my_history.page.click&vd_source=deb173f87dd59e1442832df706e513c6*
 
