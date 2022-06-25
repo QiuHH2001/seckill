@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.seckill.mapper.ProductMapper">
+
+    <insert id="addProduct" parameterType="com.example.seckill.entity.Product">
+        INSERT INTO product(`name`, quantity, price, seckill_time, end_time)
+        VALUES(#{name},#{quantity},#{price},#{seckillTime}, #{endTime})
+    </insert>
+
+</mapper>

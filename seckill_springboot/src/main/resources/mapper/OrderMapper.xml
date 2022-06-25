@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.seckill.mapper.OrderMapper">
+
+    <select id="getAllOrderByUserId" parameterType="java.lang.Integer" resultType="com.example.seckill.entity.vo.OrderVo">
+        SELECT t_order.time, product.`name`, t_order.quantity, t_order.price, `user`.`name` as username
+        from t_order, `user`, product
+        WHERE t_order.product_id = product.id
+          and t_order.user_id = `user`.id
+          AND `user`.id = #{userId}
+    </select>
+
+
+    <select id="getAllOrder" resultType="com.example.seckill.entity.vo.OrderVo">
+        SELECT t_order.time, product.`name`, t_order.quantity, t_order.price, `user`.`name` as username
+        from t_order, `user`, product
+        WHERE t_order.product_id = product.id
+          and t_order.user_id = `user`.id
+        ORDER BY product.`name`
+    </select>
+
+
+    <select id="getOrderByName" parameterType="string" resultType="com.example.seckill.entity.vo.OrderVo">
+        SELECT t_order.time, product.`name`, t_order.quantity, t_order.price, `user`.`name` as username
+        from t_order, `user`, product
+        WHERE t_order.product_id = product.id
+          and t_order.user_id = `user`.id
+          and product.`name` like '%' #{name} '%'
+        ORDER BY product.`name`
+    </select>
+</mapper>
